@@ -1,0 +1,152 @@
+:root { 
+    --blue: #0A1828; 
+    --turquoise: #178582; 
+    --gold: #BFA181;
+} 
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--blue);
+    color: var(--turquoise);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: top;
+}
+
+.loader {
+    border: 4px solid white; /* Light grey */
+    border-top: 4px solid var(--turquoise); /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+hr.solid {
+    width: 70%;
+    border-radius: 5px;
+}
+
+#title, #subtitle {
+    margin: 0 0 0 0;
+}
+
+#title {
+    font-weight: 100;
+    font-size: 48px;
+}
+
+#subtitle {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+#header {
+    text-align: center;
+    font-weight: 200;
+    color: var(--gold);
+    margin-bottom: 16px;
+    margin-top: 8px;
+}
+
+#audio-output-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: x-large;
+    color: var(--turquoise);
+}
+
+form {
+    margin-top: 32px;
+    font-size: larger;
+    width: 100%;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: var(--turquoise);
+}
+
+input,
+button,
+select {
+    font-size: medium;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    border: 2px solid var(--turquoise);
+    border-radius: 4px;
+    background-color: var(--blue);
+    color: white;
+}
+
+select {
+    width: 200px;
+}
+
+#file {
+    width: 400px;
+}
+
+@media only screen and (max-device-width: 640px) {
+    #file {
+        width: 80%;
+    }
+}
+
+#convert {
+    margin-top: 16px;
+    background-color: transparent;
+    color: var(--gold);
+    border-color: var(--gold);
+    font-size: larger;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    border-width: 1px;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#convert:hover {
+    background-color: var(--gold);
+    color: var(--blue);
+}
+
+#convert:disabled {
+    background-color: transparent;
+    color: gray;
+    border-color: gray;
+}
+
+#output {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    font-weight: 400;
+    width: 90%;
+}
+
+#no-output-message {
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+}
+
+audio {
+    margin-top: 16px;
+    width: 100%;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Converter</title>
+    <link rel="icon" type="image/x-icon" href="nuclear_icon(1).ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="header">
+        <h1 id="title">Voice Converter</h1>
+        <p id="subtitle">Made By Funcker</p>
+    </div>
+
+    <hr class="solid" />
+
+    <form id="form">
+        <!-- Audio file input -->
+        <label for="audio_file">Upload a file:</label>
+        <input type="file" id="file" name="audio_file" accept="audio/*" required>
+        <br>
+
+        <!-- Dropdown for Model selection -->
+        <label for="model_name">Select a model:</label>
+        <select id="model" name="model_name" required>
+            <!-- Options will be dynamically populated using JavaScript -->
+        </select>
+        <br>
+        <input type="submit" id="convert" value="Convert">
+    </form>
+
+    <hr class="solid" />
+
+    <div id="output">
+        <h2 id="audio-output-title">Audio output</h2>
+
+        <div class="loader" id="output-loader" hidden></div>
+        <p id="no-output-message">You have not converted any file yet.</p>
+        <!-- Audio Output element -->
+        <audio controls id="audio-output" hidden>
+            <!-- Source will be dynamically populated using JavaScript -->
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
