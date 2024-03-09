@@ -5,12 +5,25 @@ const path = require('path');
 const multer = require('multer');
 const fs = require('fs');
 const { spawn } = require('child_process');
+const compression = require("compression");
 
 // Create Express app
 const app = express();
 
 // Enable CORS for all routes
 app.use(cors());
+
+// Compress all routes
+app.use(compression()); 
+
+// Set up rate limiter: maximum of twenty requests per minute
+const RateLimit = require("express-rate-limit");
+const limiter = RateLimit({
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 50,
+});
+// Apply rate limiter to all requests
+app.use(limiter);
 
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
